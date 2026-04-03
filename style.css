@@ -273,7 +273,7 @@ h2.wh em{color:var(--gold-lt)}
 
 /* Floating lead form */
 .hero-form{
-  position:absolute;top:50%;right:48px;
+  position:absolute;top:50%;right:48px;max-width:90%;
   transform:translateY(-50%);z-index:3;
   width:280px;background:rgba(255,255,255,.97);
   border-radius:var(--r);padding:28px 24px;
@@ -314,7 +314,7 @@ h2.wh em{color:var(--gold-lt)}
 ═══════════════════════════════ */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .about-imgs{position:relative;padding-bottom:50px}
-.ai-main img{width:92%;height:500px;object-fit:cover;border-radius:var(--rl);box-shadow:var(--sh-lg)}
+.ai-main img{width:100%;height:auto;max-width:100%;object-fit:cover;border-radius:var(--rl);box-shadow:var(--sh-lg)}
 .ai-pill{
   position:absolute;top:36px;right:0;
   background:var(--gold);color:var(--white);
@@ -423,9 +423,12 @@ h2.wh em{color:var(--gold-lt)}
 #process{padding:96px 0}
 .process-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 .pstep{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:0;margin-bottom:4px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  margin-bottom:4px;
   min-height:520px;
+  overflow:hidden; /* 🔥 prevents overflow */
 }
 .pstep.rev .ps-img-col{order:2}
 .pstep.rev .ps-txt-col{order:1;padding:80px 80px 80px 0;text-align:right;align-items:flex-end}
@@ -442,7 +445,7 @@ h2.wh em{color:var(--gold-lt)}
 .pstep.rev .ps-num-big{right:auto;left:24px}
 .ps-txt-col{
   background:var(--warm);
-  padding:80px 0 80px 80px;
+  padding:80px 40px;
   display:flex;flex-direction:column;justify-content:center;gap:16px;
 }
 .ps-label{
@@ -726,6 +729,8 @@ footer{background:var(--dark)}
   .sr-grid{grid-template-columns:1fr;gap:36px}
   .trust-inner{gap:8px}
   .ti{padding:0 14px}
+  .pstep{min-height:auto;}
+  .ps-txt-col{width:100%;max-width:100%;}
 }
 @media(max-width:640px){
   section{padding:52px 0}
